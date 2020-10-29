@@ -22,7 +22,7 @@
           },
           "eventType": {
             "type": "array",
-            "description": "监听的类型, 默认监听 patchset-created，draft-published",
+            "description": "监听的类型, 默认监听 patchset-created",
             "items": {
               "type": "string",
               "enum": ["patchset-created", "draft-published", "change-merged"]

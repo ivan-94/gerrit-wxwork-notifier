@@ -96,6 +96,22 @@ config.list.forEach((item, index) => {
  赶紧过来 [Review](${env.GERRIT_CHANGE_URL}) 吧!
 `;
       send(url, content);
+    } else if (EVENT_TYPE === EVENT_TYPE_CHANGE_MERGED) {
+      send(
+        url,
+        `# 🤖 Gerrit Review
+> <font color="comment"></font>
+> <font color="comment"> Project: [${PROJECT}](${getProjectUrl()}) </font>
+> <font color="comment"> Branch: ${BRANCH} </font>
+> <font color="comment"></font>
+  @${env.GERRIT_PATCHSET_UPLOADER_NAME} 的变更 [Patch Set (${env.GERRIT_PATCHSET_NUMBER})](${
+          env.GERRIT_CHANGE_URL
+        }) 已被合并:
+<font color="comment"></font>
+<font color="info">\t${env.GERRIT_CHANGE_SUBJECT}</font>
+<font color="comment"></font>
+`
+      );
     } else {
       send(
         url,
