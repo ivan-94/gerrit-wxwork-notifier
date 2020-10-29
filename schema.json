@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "description": "配置文件模式",
+  "properties": {
+    "list": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "webhook": {
+            "type": "string",
+            "description": "企业微信群机器人 WebHook 地址"
+          },
+          "project": {
+            "type": "string",
+            "description": "Gerrit 项目名称, 正则表达式"
+          },
+          "branch": {
+            "type": "string",
+            "description": "监听的分支，正则表达式, 如果为空则监听所有分支"
+          },
+          "eventType": {
+            "type": "array",
+            "description": "监听的类型, 默认监听 patchset-created，draft-published",
+            "items": {
+              "type": "string",
+              "enum": ["patchset-created", "draft-published", "change-merged"]
+            }
+          }
+        },
+        "required": ["webhook", "project"]
+      }
+    }
+  }
+}

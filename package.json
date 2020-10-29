@@ -1,0 +1,16 @@
+{
+  "name": "gerrit-wxwork-notifier",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://liguiqi@gerrit.wakedata-inc.com:29418/gerrit-wxwork-notifier",
+  "author": "黎贵奇 <carney520@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "validate": "node ./validate.js",
+    "postinstall": "node ./postinstall"
+  },
+  "devDependencies": {
+    "ajv": "^7.0.0-beta.2",
+    "husky": "^4.3.0"
+  }
+}

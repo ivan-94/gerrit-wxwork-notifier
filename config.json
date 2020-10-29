@@ -1,0 +1,10 @@
+{
+  "$schema": "./schema.json",
+  "list": [
+    {
+      "project": "gerrit-wxwork-notifier",
+      "webhook": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=118f4a64-4a69-4535-a7aa-75184127314d",
+      "eventType": ["patchset-created", "draft-published"]
+    }
+  ]
+}
